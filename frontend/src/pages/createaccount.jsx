@@ -36,6 +36,21 @@ function CreateUserPage() {
         div.appendChild(okButton);
         document.body.appendChild(div);
       } else {
+        var div = document.createElement('div');
+        div.className = 'custom-confirm';
+        var p = document.createElement('p');
+        p.className = 'text';
+        p.textContent = "成功建立帳號";
+        div.appendChild(p);
+        var okButton = document.createElement('button');
+        okButton.textContent = '確定';
+        okButton.className = 'btn ok';
+        okButton.addEventListener('click', function() {
+          div.style.display = 'none';
+          resolve(true);
+        });
+        div.appendChild(okButton);
+        document.body.appendChild(div);
         setMessage(JSON.stringify(data, null, 2));
       }
     });

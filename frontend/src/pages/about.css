@@ -1,4 +1,4 @@
-.container {
+.a {
     min-height: calc(100vh - 80px);
     display: grid;
     grid-template-rows: 100%;
@@ -7,11 +7,8 @@
   }
   
   .title {
-    /* display: flex; */
     flex-direction: column;
-    /* justify-content: center; */
     padding: 150px;
-    /* background-color: #16bdec; */
   }
   .title img{
     display: block;
@@ -22,7 +19,6 @@
     width: 200px;
   }
   .title-header {
-    /* text-align: center; */
     position: relative;
     left: 35%;
     top: 15%;

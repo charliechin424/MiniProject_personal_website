@@ -1,7 +1,7 @@
 import services from "../services";
 import { useEffect, useState } from "react";
 import { CommentList } from "./commentlist"
-// you should design your register page and api
+
 function chat() {
   services.user.getid().then((data) => {
     if (data === null){
@@ -12,8 +12,6 @@ function chat() {
 
   /** @type {React.ChangeEventHandler<HTMLInputElement>} */
   const handleTextInputChange = ({ target: { name, value } }) => {
-    // const { name, value } = event.target
-    // obj = { ...prev }; obj[name] = value
     setFormData((prev) => ({
       ...prev,
       [name]: value,

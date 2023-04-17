@@ -7,7 +7,7 @@ export const user = {
     return data;
   },
   async getAllComment(){
-    const { data } = await api.get("/users/chat");
+    const { data } = await api.get("/users/chatboard");
     return data;
   },
   async getOneComment(){
@@ -27,15 +27,15 @@ export const user = {
     return data;
   },
   async post({message}){
-    const { data } = await api.post("/users/chat", {message});
+    const { data } = await api.post("/users/createComment", {message});
     return data;
   },
   async deletee({id,userId}){
-    const {data} = await api.post("/users/delete", {id, userId});
+    const {data} = await api.post("/users/deletecomment", {id, userId});
     return data;
   },
   async getid(){
-    const {data} = await api.get("/users/idd");
+    const {data} = await api.get("/users/getid");
     return data;
   },
   async logout(){

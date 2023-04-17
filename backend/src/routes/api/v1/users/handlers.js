@@ -4,17 +4,14 @@ export async function getAllUsers(req, res) {
   const allUsers = await prisma.user.findMany();
   return res.json(allUsers);
 }
-export async function getAllComment(req,res){
+export async function getComment(req,res){
   const allComment = await prisma.comment.findMany({orderBy: {
     id: 'desc'
   }});
   return res.json(allComment);
 }
-/**
- * @param {import('express').Request} req
- * @param {import('express').Response} res
- */
-export async function createOneUser(req, res) {
+
+export async function createUser(req, res) {
   if (await prisma.user.findUnique({where:{name: req.body.name}}) === null) {
     const user = await prisma.user.create({ data: { name: req.body.name , password: req.body.password, image: req.body.image, Student_ID: req.body.Student_ID, NTU_mail: req.body.NTU_mail} });
     return res.status(201).json(user);
@@ -23,10 +20,7 @@ export async function createOneUser(req, res) {
   }
 }
 
-/**
- * @param {import('express').Request} req
- * @param {import('express').Response} res
- */
+
 export async function getOneUser(req, res) {
   const { name, password } = req.body;
 

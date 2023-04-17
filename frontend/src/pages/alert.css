@@ -1,4 +1,4 @@
-/* 自訂對話框樣式 */
+
 .custom-confirm {
     background-color: #fff;
     width: 15%;
@@ -11,7 +11,7 @@
     top: 5%;
   }
   
-  /* 自訂按鈕樣式 */
+
   .custom-confirm .btn {
     background-color: #000;
     color: #fff;

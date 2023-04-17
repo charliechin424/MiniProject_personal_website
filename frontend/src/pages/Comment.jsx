@@ -1,7 +1,6 @@
 
-import "./style.css"
+import "./comment.css"
 import services from "../services";
-import { useState, useEffect } from "react";
 const dateFormatter = new Intl.DateTimeFormat(undefined, {
   dateStyle: "medium",
   timeStyle: "short",

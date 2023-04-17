@@ -2,7 +2,7 @@ import "./about.css"
 import me from "./photo.png"
 export default function About() {
   return (
-    <div class="container">
+    <div class="a">
       
         <div class="title">
           <img src={me} />

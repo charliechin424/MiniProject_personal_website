@@ -5,12 +5,12 @@ import RootLayout, { RootIndex } from "./pages";
 import About from "./pages/about";
 import "./index.css";
 import UserPage from "./pages/users";
-import CreateUserPage from "./pages/create-user";
+import CreateUserPage from "./pages/createaccount";
 import ErrorPage from "./pages/error-page";
-import SignIn from "./pages/signIn";
-import Chat from "./pages/chat";
+import SignIn from "./pages/login";
+import Chat from "./pages/chatboard";
 import Profile from "./pages/profile";
-import services from "./services";
+
 const router = createBrowserRouter([
   {
     path: "/",
