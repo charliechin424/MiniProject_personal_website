@@ -5,7 +5,6 @@ export default function Profile() {
     const [formData, setFormData] = useState({ username: "", image:"", Student_ID:"", NTU_mail: ""});
     useEffect(() =>{
         services.user.getprofile().then((user) => {
-            console.log(user);
             setFormData({username: user.name, image: user.image, Student_ID: user.Student_ID, NTU_mail: user.NTU_mail})
         })
     }, []);

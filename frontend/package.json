@@ -1,5 +1,5 @@
 {
-  "name": "frontend",
+  "name": "src",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -27,5 +27,7 @@
     "postcss": "^8.4.21",
     "tailwindcss": "^3.2.7",
     "vite": "^4.1.0"
-  }
+  },
+  "main": "index.js",
+  "license": "MIT"
 }
