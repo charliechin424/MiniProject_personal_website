@@ -9,11 +9,11 @@ export default function Profile() {
         })
     }, []);
   return (
-    <div class="container">
+    <div className="container">
       
-        <div class="title">
+        <div className="title">
           <img style={{width:"20%", height:"40%"}} className="rounded-full" src={formData.image} />
-            <div class="title-header">
+            <div className="title-header">
                 <ul style={{fontSize: "larger"}}>
                     <li style={{padding: "1%"}}>1. Name : {formData.username}</li>
                     <li style={{padding: "1%"}}>2. Student ID : {formData.Student_ID} </li>
