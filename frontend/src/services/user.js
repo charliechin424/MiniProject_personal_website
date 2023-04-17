@@ -10,6 +10,10 @@ export const user = {
     const { data } = await api.get("/users/chat");
     return data;
   },
+  async getOneComment(){
+    const { data } = await api.get("/users/comment");
+    return data;
+  },
   async createOne({ name, password, image, Student_ID, NTU_mail}) {
     const { data } = await api.post("/users", { name:name ,password:password, image: image, Student_ID:Student_ID, NTU_mail:NTU_mail});
     return data;
@@ -38,8 +42,13 @@ export const user = {
     const {data} = await api.get("/users/logout");
     return data;
   },
-  async checkid({Id}){
-    const {data} = await api.post("/users/checkid", {Id});
+  async checkid(){
+    const {data} = await api.get("/users/checkid");
+    return data;
+  },
+
+  async getprofile(){
+    const {data} = await api.get("/users/profile");
     return data;
   },
 };

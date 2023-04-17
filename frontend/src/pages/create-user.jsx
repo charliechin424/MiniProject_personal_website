@@ -1,7 +1,7 @@
 import { LockClosedIcon } from "@heroicons/react/20/solid";
 import { useState } from "react";
 import services from "../services";
-import me from "./photo.png"
+import "./alert.css"
 // you should design your register page and api
 function CreateUserPage() {
   const [formData, setFormData] = useState({ username: "", password: "", image:"", Student_ID:"", NTU_mail: ""});
@@ -20,7 +20,21 @@ function CreateUserPage() {
   const handleFormSubmit = (event) => {
     services.user.createOne({ name: formData.username, password: formData.password, image: formData.image, Student_ID: formData.Student_ID, NTU_mail: formData.NTU_mail}).then((data) => {
       if (data === "Error"){
-        alert("該用戶名已被註冊")
+        var div = document.createElement('div');
+        div.className = 'custom-confirm';
+        var p = document.createElement('p');
+        p.className = 'text';
+        p.textContent = "此用戶名已被使用";
+        div.appendChild(p);
+        var okButton = document.createElement('button');
+        okButton.textContent = '確定';
+        okButton.className = 'btn ok';
+        okButton.addEventListener('click', function() {
+          div.style.display = 'none';
+          resolve(true);
+        });
+        div.appendChild(okButton);
+        document.body.appendChild(div);
       } else {
         setMessage(JSON.stringify(data, null, 2));
       }
@@ -110,14 +124,14 @@ function CreateUserPage() {
             <div className="-space-y-px rounded-md shadow-sm">
               <div>
                 <label htmlFor="NTU-mail" className="sr-only">
-                  NTU-mail
+                  your Mail
                 </label>
                 <input
                   name="NTU_mail"
                   type="text"
                   required
                   className="relative block w-full rounded-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                  placeholder="NTU-mail"
+                  placeholder="Enter your Mail"
                   value={formData.NTU_mail}
                   onChange={handleTextInputChange}
                 />

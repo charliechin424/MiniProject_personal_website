@@ -9,6 +9,7 @@ import CreateUserPage from "./pages/create-user";
 import ErrorPage from "./pages/error-page";
 import SignIn from "./pages/signIn";
 import Chat from "./pages/chat";
+import Profile from "./pages/profile";
 import services from "./services";
 const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
       {
         path: "/about",
         element: <About />,
+      },
+      {
+        path: "/profile",
+        element: <Profile />,
       },
       {
         path: "/users",

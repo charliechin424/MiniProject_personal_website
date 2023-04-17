@@ -23,13 +23,9 @@ function chat() {
   /** @type {React.FormEventHandler<HTMLFormElement>} */
   const handleFormSubmit = (event) => {
     services.user.post({ message: formData.message  });
-    useEffect(() => {
-      services.user.getAllComment().then((allComment) => {
-        setcomment(allComment.reverse());
-        window.setTimeout(20000);
-      });
-    }, []);
-    
+    setTimeout(() => services.user.getOneComment().then((oneComment) => {
+      setcomment([...oneComment, ...comment]);
+    }),1000);
     setFormData({ message : ""});
     event.preventDefault();
   };

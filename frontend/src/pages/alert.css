@@ -1,0 +1,40 @@
+/* 自訂對話框樣式 */
+.custom-confirm {
+    background-color: #fff;
+    width: 15%;
+    color: #000;
+    padding: 3%;
+    border: 2px solid #000;
+    border-radius: 5px;
+    position: relative;
+    left: 43%;
+    top: 5%;
+  }
+  
+  /* 自訂按鈕樣式 */
+  .custom-confirm .btn {
+    background-color: #000;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+    position: absolute;
+    left: 42%;
+    top: 70%;
+  }
+  
+  .custom-confirm .btn:hover {
+    background-color: #666;
+  }
+  
+  .custom-confirm .btn.ok {
+    background-color: #007bff;
+  }
+
+  .text {
+    position: absolute;
+    left: 31%;
+    top: 30%;
+  }
+  

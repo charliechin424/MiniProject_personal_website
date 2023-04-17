@@ -10,13 +10,13 @@ import { useEffect, useState } from "react";
 const nav_logout = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
-  { name: "Users", href: "/users" },
-  { name: "Create User", href: "/create-user" },
+  { name: "User List", href: "/users" },
+  { name: "Create Account", href: "/create-user" },
 ];
 
 const nav_login= [
-  { name: "About", href: "/about" },
-  { name: "Chat", href: "/chat"},
+  { name: "Profile", href: "/profile" },
+  { name: "Message Board", href: "/chat"},
 ];
 
 function classNames(...classes) {
@@ -70,11 +70,6 @@ function RootLayout() {
                 </div>
                 <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                   <div className="flex flex-shrink-0 items-center">
-                    <img
-                      className="hidden h-8 w-auto lg:block"
-                      src={me}
-                      alt="Your Company"
-                    />
                   </div>
                   <div className="hidden sm:ml-6 sm:block">
                     <div className="flex space-x-4">

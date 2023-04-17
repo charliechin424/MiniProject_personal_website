@@ -2,7 +2,7 @@ import { NavLink, Outlet } from "react-router-dom";
 import { LockClosedIcon } from "@heroicons/react/20/solid";
 import { useState } from "react";
 import services from "../services";
-import me from "./photo.png"
+import "./alert.css"
 // you should design your register page and api
 function signIn() {
   const [formData, setFormData] = useState({ username: "", password: "" });
@@ -21,11 +21,39 @@ function signIn() {
   const handleFormSubmit = (event) => {
     services.user.check({ name: formData.username, password: formData.password  }).then((data) => {
       if (data === null){
-        alert("用戶不存在");
+        var div = document.createElement('div');
+        div.className = 'custom-confirm';
+        var p = document.createElement('p');
+        p.className = 'text';
+        p.textContent = "此用戶名不存在";
+        div.appendChild(p);
+        var okButton = document.createElement('button');
+        okButton.textContent = '確定';
+        okButton.className = 'btn ok';
+        okButton.addEventListener('click', function() {
+          div.style.display = 'none';
+          resolve(true);
+        });
+        div.appendChild(okButton);
+        document.body.appendChild(div);
       } else if (data.password === formData.password){
-        window.location.replace("/about");
+        window.location.replace("/profile");
       } else {
-        alert("密碼輸入錯誤");
+        var div = document.createElement('div');
+        div.className = 'custom-confirm';
+        var p = document.createElement('p');
+        p.className = 'text';
+        p.textContent = "密碼輸入錯誤";
+        div.appendChild(p);
+        var okButton = document.createElement('button');
+        okButton.textContent = '確定';
+        okButton.className = 'btn ok';
+        okButton.addEventListener('click', function() {
+          div.style.display = 'none';
+          resolve(true);
+        });
+        div.appendChild(okButton);
+        document.body.appendChild(div);
       }
     });
     setFormData({ username: "", password: "" });
@@ -45,11 +73,6 @@ function signIn() {
       <div className="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
         <div className="w-full max-w-md space-y-8">
           <div>
-            <img
-              className="mx-auto h-12 w-auto"
-              src={me}
-              alt="Your Company"
-            />
             <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">
               Login in Website!
             </h2>
