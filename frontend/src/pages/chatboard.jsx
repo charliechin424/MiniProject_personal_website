@@ -1,6 +1,6 @@
 import services from "../services";
 import { useEffect, useState } from "react";
-import { CommentList } from "./commentlist"
+import { CommentList } from "./commentlists"
 
 function chat() {
   services.user.getid().then((data) => {

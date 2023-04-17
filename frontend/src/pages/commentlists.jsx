@@ -1,4 +1,4 @@
-import { Comment } from "./comment"
+import { Comment } from "./comments"
 import services from "../services";
 
 export function CommentList({ comments }) {
